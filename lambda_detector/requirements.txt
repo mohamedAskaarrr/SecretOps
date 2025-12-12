@@ -1,0 +1,9 @@
+# AWS Lambda Runtime Dependencies
+# These are already available in the AWS Lambda Python 3.11 runtime
+
+boto3>=1.26.0
+botocore>=1.29.0
+
+# Note: No additional packages need to be installed for this Lambda function.
+# All dependencies (boto3, json, re, os, hmac, hashlib, datetime) are part of
+# the Python standard library or the AWS Lambda runtime environment.
