@@ -19,8 +19,9 @@ AWS_KEY_REGEX = re.compile(r'AKIA[0-9A-Z]{16}')
 
 def verify_github_signature(raw_body: bytes, signature_header: str) -> bool:
     if not GITHUB_WEBHOOK_SECRET:
-        # treat as misconfigured but allow local/test runs to proceed
-        return False
+        # In production, this should fail. Allow for local/test environments only via explicit env var.
+        allow_unsigned = os.environ.get('ALLOW_UNSIGNED_WEBHOOKS', 'false').lower() == 'true'
+        return allow_unsigned
     mac = hmac.new(GITHUB_WEBHOOK_SECRET.encode('utf-8'), msg=raw_body, digestmod=hashlib.sha256)
     expected = 'sha256=' + mac.hexdigest()
     return hmac.compare_digest(expected, signature_header or '')
@@ -90,9 +91,9 @@ def handler(event, context):
         except Exception:
             payload = {'raw': raw_body_bytes.decode('utf-8', errors='ignore')}
 
-        # If signature exists and verification fails -> alert and return 200 (do not act)
-        if sig_header and not signed_ok:
-            publish_alert(f'GitHub webhook signature verification failed. Headers: {sig_header}')
+        # If signature verification fails -> alert and return 200 (do not act)
+        if not signed_ok:
+            publish_alert(f'GitHub webhook signature verification failed or missing. Headers: {sig_header}')
             return {'statusCode': 200, 'body': json.dumps({'status': 'signature_failed'})}
 
         search_text = extract_text_from_payload(payload)

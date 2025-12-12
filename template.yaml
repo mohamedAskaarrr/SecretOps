@@ -40,11 +40,11 @@ Resources:
                 - iam:ListUsers
                 - iam:ListAccessKeys
                 - iam:UpdateAccessKey
-              Resource: "*"
+              Resource: "arn:aws:iam::*:user/*"
             - Effect: Allow
               Action:
                 - sns:Publish
-              Resource: "*"
+              Resource: !Ref AlertsTopic
       Events:
         GitHubWebhook:
           Type: Api

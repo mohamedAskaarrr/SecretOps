@@ -28,7 +28,7 @@ jobs:
       - name: Check Python syntax for handler
         run: python -m py_compile lambda_detector/handler.py || (echo "Python syntax error" && exit 1)
 
-      - name: Optional - Run bandit security scan
+      - name: Run bandit security scan
         run: |
           pip install bandit
-          bandit -r lambda_detector || echo "Bandit issues found; review"
+          bandit -r lambda_detector
