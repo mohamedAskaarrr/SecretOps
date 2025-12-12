@@ -1,0 +1,10 @@
+Title,Body,Assignees,Labels,Milestone,ProjectColumn
+"T1: Repo kickoff & security.md","Create repo, add README, security.md, branch protection, issue templates. Deliver: threat-model.md","@team-lead","project-kickoff,documentation","Sprint 1","Backlog"
+"T2: Account hardening & CloudTrail","Enable CloudTrail -> S3 + CloudWatch, create S3 bucket with BlockPublicAccess, ensure root MFA, remove root keys, create IncidentOps user","@infra","infra,security","Sprint 1","Backlog"
+"T3: Secrets inventory & SSM migration","Inventory secrets, create secrets-inventory.csv, migrate secrets to SSM SecureString, PR to remove plaintext","@devops","secrets,devops","Sprint 1","Backlog"
+"T4: Exposure-detection Lambda + GitHub webhook","Create Lambda + API Gateway, webhook from GitHub, scan commit diffs for key regex, publish alerts to SNS/Slack","@serverless-dev","detection,lambda","Sprint 2","Backlog"
+"T5: Rotation automation","Lambda/tool that creates replacement keys, stores to SSM, updates deployment config, deactivates old key after verification","@devops","rotation,automation","Sprint 2","Backlog"
+"T6: App integration (Laravel) to use SSM","Refactor app to remove static creds, add Laravel helper to fetch from SSM, use IAM role for runtime","@backend","laravel,backend","Sprint 2","Backlog"
+"T7: Monitoring & runbook","CloudWatch metric filters, SNS Slack alerts, runbook.md + tabletop drill","@secops","monitoring,runbook","Sprint 3","Backlog"
+"T4-test: Synthetic detection test","Create test commit payload containing AKIA... and validate Lambda disables test key and sends alert","@qa","test,automation","Sprint 2","Backlog"
+"T3-cleanup: Remove secrets from git history","Use git-filter-repo (or BFG) to remove historic credentials, document process","@devops","cleanup,git","Sprint 2","Backlog"
