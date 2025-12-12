@@ -2,18 +2,16 @@
 
 <!-- CYBERPUNK DARK THEME README -->
 
-<p align="center">
-  <img src="https://media.giphy.com/media/tf9jjMcO77YzV4YPvn/giphy.gif" width="180">
-</p>
+
 
 <h1 align="center">⚡ rip-to-rest-secrets ⚡</h1>
 
 <p align="center"><strong>Automated Cyber-Defense Pipeline for Exposed AWS Credentials</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Theme-Cyberpunk_Dark-ff00ff?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/AWS_SAM-orange?style=for-the-badge&logo=amazonaws" />
-  <img src="https://img.shields.io/badge/GitHub_Webhooks-000000?style=for-the-badge&logo=github" />
+
+  
+
   <img src="https://img.shields.io/badge/SNS_Alerts-blue?style=for-the-badge&logo=amazonaws" />
   <img src="https://img.shields.io/badge/IAM_Key_Rotation-39FF14?style=for-the-badge&logo=amazonaws" />
 </p>
@@ -21,7 +19,7 @@
 ---
 
 <p align="center">
-  <img src="https://media.giphy.com/media/cIhAMp6C0y2b6/giphy.gif" width="600">
+  <img src="https://img.shields.io/badge/SNS_Alerts-blue?style=for-the-badge&logo=amazonaws" />
 </p>
 
 ---
