@@ -56,7 +56,7 @@ flowchart LR
     G -->|Disable Key| H[Deactivate IAM Key]
 
     D --> I[SNS Alerts]
-````
+```
 
 ---
 
@@ -84,23 +84,22 @@ flowchart LR
 rip-to-rest-secrets/
 │
 ├── template.yaml               # AWS SAM infrastructure stack
-├── project_issues.csv          # Bulk import for sprint tasks
-├── tasks.md                    # Copilot tasks + branching strategy
+├── tasks.md                    # Project tasks + implementation guide
 ├── README.md                   # Cyberpunk edition
 │
-├── lambda_detector/
-│   └── handler.py              # Core secrets detection Lambda
-│
-├── docs/
-│   └── runbook.md              # Incident response playbook
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml              # Secure CI pipeline
-│
-└── tests/
-    └── synthetic_payload.json  # Test GitHub payload
+└── (Future additions)
+    ├── lambda_detector/
+    │   └── handler.py          # Core secrets detection Lambda
+    ├── docs/
+    │   └── runbook.md          # Incident response playbook
+    ├── .github/
+    │   └── workflows/
+    │       └── ci.yml          # Secure CI pipeline
+    └── tests/
+        └── synthetic_payload.json  # Test GitHub payload
 ```
+
+> **Note**: The directories `lambda_detector/`, `docs/`, `.github/workflows/`, and `tests/` are referenced in this README but not yet created. Refer to `tasks.md` for implementation details.
 
 ---
 
@@ -164,16 +163,18 @@ You will be prompted for:
 
 # 📘 Runbook (InfraSec Ops)
 
-Located at:
+To be created at:
 
 📄 **`docs/runbook.md`**
 
-Includes:
+Will include:
 
 * Incident response workflow
 * IAM rotation guide
 * Log forensics
 * Recovery guidance
+
+> **Note**: Runbook documentation is planned. See `tasks.md` for implementation details.
 
 ---
 
@@ -204,5 +205,4 @@ All PRs require:
 ---
 
 <p align="center"><strong>Built with ⚡ Neon Energy ⚡ for Security Automation</strong></p>
-```
 
