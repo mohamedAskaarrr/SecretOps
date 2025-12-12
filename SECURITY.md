@@ -54,7 +54,7 @@ If you discover a security vulnerability, please follow these steps:
 
 1. **Do NOT** open a public issue
 2. Use GitHub's private vulnerability reporting feature (if enabled)
-3. Or email the security team directly at: [security@example.com]
+3. Or contact the repository maintainers privately through GitHub
 4. Include:
    - Description of the vulnerability
    - Steps to reproduce
@@ -99,5 +99,5 @@ This repository uses automated security scanning tools:
 ## Contact
 
 For security-related questions or concerns:
-- Security Team: [security@example.com]
 - Repository Maintainers: See CODEOWNERS file
+- Use GitHub's private vulnerability reporting or contact maintainers directly

@@ -3,14 +3,17 @@
 
 # Default owners for everything in the repo
 # These are the Owners team members who have final say on all changes
+# When teams are created, replace with: * @org/owners-team
 * @mohamedAskaarrr
 
 # Security-related files require security team review
+# When teams are created, replace with: @org/security-team or @org/owners-team
 SECURITY.md @mohamedAskaarrr
 threat-model.md @mohamedAskaarrr
 .github/ISSUE_TEMPLATE/security_vulnerability.md @mohamedAskaarrr
 
 # Infrastructure and CI/CD configurations require Infra team review
+# When teams are created, replace with: @org/infra-team
 .github/workflows/ @mohamedAskaarrr
 *.yml @mohamedAskaarrr
 *.yaml @mohamedAskaarrr
@@ -18,5 +21,6 @@ Dockerfile @mohamedAskaarrr
 docker-compose.yml @mohamedAskaarrr
 
 # Documentation can be reviewed by any team member
+# When teams are created, replace with: @org/devs-team
 *.md @mohamedAskaarrr
 docs/ @mohamedAskaarrr
