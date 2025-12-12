@@ -1,0 +1,22 @@
+# CODEOWNERS - Defines code ownership and review requirements
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repo
+# These are the Owners team members who have final say on all changes
+* @mohamedAskaarrr
+
+# Security-related files require security team review
+SECURITY.md @mohamedAskaarrr
+threat-model.md @mohamedAskaarrr
+.github/ISSUE_TEMPLATE/security_vulnerability.md @mohamedAskaarrr
+
+# Infrastructure and CI/CD configurations require Infra team review
+.github/workflows/ @mohamedAskaarrr
+*.yml @mohamedAskaarrr
+*.yaml @mohamedAskaarrr
+Dockerfile @mohamedAskaarrr
+docker-compose.yml @mohamedAskaarrr
+
+# Documentation can be reviewed by any team member
+*.md @mohamedAskaarrr
+docs/ @mohamedAskaarrr
