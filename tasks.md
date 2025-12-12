@@ -287,3 +287,12 @@ Minimal JSON example for SSM access (app):
 ---
 
 If you want, I can now: convert the CSV into a ready-to-import GitHub `issues.csv` file in the repo (I can create the file content here), or generate a `serverless.yml` instead of SAM, or give you the exact IAM JSON with your account ID filled (I'll need your account-id). Which of these should I do next? (No waiting — I will produce it in the next message.)
+
+---
+
+# Copilot Tasks: implement secrets detection pipeline pieces
+
+- Task A (branch: feature/detector-lambda): create lambda_detector/handler.py
+- Task B (branch: feature/docs-and-ci): create docs/runbook.md
+- Task C (branch: feature/docs-and-ci): create .github/workflows/ci.yml
+- Task D (branch: feature/docs-and-ci): add tests/synthetic_payload.json
