@@ -7,7 +7,7 @@ import re
 import base64
 import boto3
 from botocore.exceptions import ClientError
-from datetime import datetime
+from datetime import datetime, timezone
 
 SNS_TOPIC_ARN = os.environ.get('SNS_TOPIC_ARN')
 GITHUB_WEBHOOK_SECRET = os.environ.get('GITHUB_WEBHOOK_SECRET')  # raw secret string
@@ -109,7 +109,7 @@ def handler(event, context):
             if owner:
                 ok = disable_key_for_user(owner, key)
                 msg = {
-                    'time': datetime.utcnow().isoformat() + 'Z',
+                    'time': datetime.now(timezone.utc).isoformat(),
                     'access_key_id': key,
                     'owner': owner,
                     'disabled': ok
@@ -118,7 +118,7 @@ def handler(event, context):
                 results.append(msg)
             else:
                 publish_alert(json.dumps({
-                    'time': datetime.utcnow().isoformat() + 'Z',
+                    'time': datetime.now(timezone.utc).isoformat(),
                     'access_key_id': key,
                     'owner': None,
                     'disabled': False,
