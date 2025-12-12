@@ -1,0 +1,107 @@
+{
+  "ref": "refs/heads/main",
+  "before": "abc123def456",
+  "after": "def456abc789",
+  "repository": {
+    "id": 123456789,
+    "name": "test-repo",
+    "full_name": "testorg/test-repo",
+    "private": true,
+    "owner": {
+      "name": "testorg",
+      "email": "test@example.com"
+    },
+    "html_url": "https://github.com/testorg/test-repo",
+    "description": "Test repository for secrets detection",
+    "url": "https://github.com/testorg/test-repo"
+  },
+  "pusher": {
+    "name": "testuser",
+    "email": "testuser@example.com"
+  },
+  "sender": {
+    "login": "testuser",
+    "id": 987654321,
+    "type": "User"
+  },
+  "commits": [
+    {
+      "id": "def456abc789",
+      "tree_id": "tree123456",
+      "distinct": true,
+      "message": "Add AWS configuration - DO NOT COMMIT\n\nTemporary commit with hardcoded credentials for testing.\nThis should trigger the secrets detector!",
+      "timestamp": "2025-12-12T14:00:00Z",
+      "url": "https://github.com/testorg/test-repo/commit/def456abc789",
+      "author": {
+        "name": "Test User",
+        "email": "testuser@example.com",
+        "username": "testuser"
+      },
+      "committer": {
+        "name": "Test User",
+        "email": "testuser@example.com",
+        "username": "testuser"
+      },
+      "added": [
+        "config/aws-config.txt"
+      ],
+      "removed": [],
+      "modified": [
+        "src/app.py"
+      ],
+      "diff": "diff --git a/config/aws-config.txt b/config/aws-config.txt\nnew file mode 100644\nindex 0000000..1234567\n--- /dev/null\n+++ b/config/aws-config.txt\n@@ -0,0 +1,3 @@\n+AWS_ACCESS_KEY_ID=AKIA1111111111111111\n+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\n+AWS_REGION=us-east-1\n"
+    },
+    {
+      "id": "abc123def456",
+      "tree_id": "tree654321",
+      "distinct": true,
+      "message": "Update README with deployment instructions",
+      "timestamp": "2025-12-12T13:30:00Z",
+      "url": "https://github.com/testorg/test-repo/commit/abc123def456",
+      "author": {
+        "name": "Test User",
+        "email": "testuser@example.com",
+        "username": "testuser"
+      },
+      "committer": {
+        "name": "Test User",
+        "email": "testuser@example.com",
+        "username": "testuser"
+      },
+      "added": [],
+      "removed": [],
+      "modified": [
+        "README.md"
+      ]
+    }
+  ],
+  "head_commit": {
+    "id": "def456abc789",
+    "tree_id": "tree123456",
+    "distinct": true,
+    "message": "Add AWS configuration - DO NOT COMMIT",
+    "timestamp": "2025-12-12T14:00:00Z",
+    "url": "https://github.com/testorg/test-repo/commit/def456abc789",
+    "author": {
+      "name": "Test User",
+      "email": "testuser@example.com",
+      "username": "testuser"
+    },
+    "committer": {
+      "name": "Test User",
+      "email": "testuser@example.com",
+      "username": "testuser"
+    },
+    "added": [
+      "config/aws-config.txt"
+    ],
+    "removed": [],
+    "modified": [
+      "src/app.py"
+    ]
+  },
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "compare": "https://github.com/testorg/test-repo/compare/abc123def456...def456abc789"
+}
