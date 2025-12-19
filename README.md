@@ -21,6 +21,10 @@ GitHub → API Gateway → AWS Lambda → SNS → IAM Remediation
 
 
 
+
+
+
+
 ## Tech Stack
 - GitHub Webhooks
 - AWS API Gateway (HTTP API)
