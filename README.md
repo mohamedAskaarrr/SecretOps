@@ -18,6 +18,9 @@ GitHub → API Gateway → AWS Lambda → SNS → IAM Remediation
 - Team roles assigned
 - API Gateway & Lambda setup started
 
+
+
+
 ## Tech Stack
 - GitHub Webhooks
 - AWS API Gateway (HTTP API)
