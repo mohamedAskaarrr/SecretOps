@@ -36,9 +36,6 @@ GitHub → API Gateway → AWS Lambda → SNS → IAM Remediation
 🚧 In Progress
 thanks
 
-AWS_SECRET_ACCESS_KEY=AKIA1234567890123456
-
-AWS_SECRET_ACCESS_KEY=abcdabcdabcdabcdabcdabcdabcdabcdabcdabbd
 
 
 
