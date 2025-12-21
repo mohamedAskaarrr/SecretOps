@@ -1,4 +1,4 @@
-# SecretOps 🔐
+# SecretOps 
 **Automated Detection & Remediation of Exposed Secrets using AWS**
 
 ## Overview
