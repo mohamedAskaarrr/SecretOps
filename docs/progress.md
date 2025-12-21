@@ -36,3 +36,31 @@ We successfully implemented external secret detection for public GitHub Gists.
 
 📄 Full progress report (PDF):
 https://drive.google.com/file/d/1y7R6d96eN3ixs0AFn8Nd2EkZrC2HuYkl/view?usp=sharing
+
+
+
+
+
+
+
+
+
+
+
+
+Noise reduction solution : 
+
+
+GitHub
+  → Regex (fast filter)
+    → OpenAI Analysis (noise reduction)
+      → SNS Alert (only high confidence)
+
+
+
+
+
+
+
+
+
