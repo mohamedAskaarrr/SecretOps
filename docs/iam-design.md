@@ -9,3 +9,7 @@
 - Least privilege
 - Separation of duties
 - No root usage
+
+
+
+AWS_ACCESS_KEY_ID=AKIA12345678901234
