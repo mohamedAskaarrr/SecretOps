@@ -8,4 +8,4 @@ SecretOps follows a serverless, event-driven architecture.
 4. SNS sends alerts
 5. IAM keys are disabled if compromised
 
-AWS_SECRET_ACCESS_KEY=AKIA1234567890123456
+
