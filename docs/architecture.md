@@ -10,6 +10,7 @@ SecretOps follows a serverless, event-driven architecture.
 
 
 
+
 AWS_SECRET_ACCESS_KEY=AKIA1234567890123456
 
 
