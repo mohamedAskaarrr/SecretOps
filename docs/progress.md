@@ -64,3 +64,40 @@ GitHub
 
 
 
+
+
+
+
+
+
+
+
+
+
+last phase 
+
+
+
+GitHub Push
+  → Diff Scan
+    → Regex
+      → OpenAI Validation
+        → Severity Score
+          → DynamoDB Incident
+            → Auto-Disable AWS Key (if CRITICAL)
+              → SNS Alert
+                → Dashboard View
+
+
+
+
+
+
+
+
+
+
+
+
+
+
