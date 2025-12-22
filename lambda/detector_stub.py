@@ -7,10 +7,16 @@ import urllib.request
 import re
 import boto3
 
+
+
 # =============================
 # AWS Client
 # =============================
 sns = boto3.client("sns")
+
+# =============================
+# Regex Detection Rules
+# =============================
 
 # =============================
 # Regex Detection Rules
