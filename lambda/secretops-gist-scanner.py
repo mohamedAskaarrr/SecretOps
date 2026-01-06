@@ -151,3 +151,8 @@
 
 #     log("GIST_SCAN_COMPLETE")
 #     return {"statusCode": 200}
+
+
+
+AWS_SECRET_ACCESS_KEY=abcdabcdabcdabcdabcdabcdabcdabcdabcdabbd
+AWS_SECRET_ACCESS_KEY=abcdabcdabcdabcdabcdabcdabcdabcdabcdabbd
