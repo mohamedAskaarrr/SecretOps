@@ -1,0 +1,12 @@
+{
+  "ref": "refs/heads/main",
+  "commits": [
+    {
+      "id": "abc123",
+      "message": "Test commit with leaked key AKIA1111111111111111",
+      "added": ["file.txt"],
+      "modified": [],
+      "removed": []
+    }
+  ]
+}

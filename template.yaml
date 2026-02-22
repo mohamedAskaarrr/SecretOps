@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Serverless pipeline to detect leaked API keys from GitHub webhooks,
+  disable compromised IAM keys, and publish alerts.
+
+Globals:
+  Function:
+    Timeout: 10
+    Runtime: python3.11
+    MemorySize: 256
+
+Resources:
+
+  #########################################
+  # SNS Topic – Security Alerts
+  #########################################
+  AlertsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: secrets-detection-alerts
+
+  #########################################
+  # Lambda Function – Detector Engine
+  #########################################
+  SecretsDetectorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: secrets-detector-lambda
+      Handler: handler.handler
+      CodeUri: lambda_detector/
+      Environment:
+        Variables:
+          SNS_TOPIC_ARN: !Ref AlertsTopic
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - iam:ListUsers
+                - iam:ListAccessKeys
+                - iam:UpdateAccessKey
+              Resource: "arn:aws:iam::*:user/*"
+            - Effect: Allow
+              Action:
+                - sns:Publish
+              Resource: !Ref AlertsTopic
+      Events:
+        GitHubWebhook:
+          Type: Api
+          Properties:
+            Path: /github-webhook
+            Method: post
+
+  #########################################
+  # Log Group – CloudWatch Logs for Lambda
+  #########################################
+  DetectorLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /aws/lambda/secrets-detector-lambda
+      RetentionInDays: 30
+
+Outputs:
+  WebhookURL:
+    Description: "API Gateway endpoint to paste into GitHub webhook settings"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/github-webhook"
+
+  AlertsSNS:
+    Description: "SNS topic used for alerting"
+    Value: !Ref AlertsTopic
